@@ -1,0 +1,350 @@
+body{
+  font-family: "Lucida Console", "Courier New", monospace;
+  background-image: url('bcgr.jpg');
+  align-items: center;
+}
+a{
+  cursor: pointer;
+}
+.btn{
+  border: none;
+  color: white;
+  padding: 13px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius:10px;
+}
+.btn-danger {background-color: #f49325;} /* Red */ 
+.btn-danger:hover{
+    background-color: #f44336;
+}
+.btn-success{background-color: #4CAF50;}
+.btn-success:hover{
+    background-color:#00CC66;
+}
+.submit{
+background-color: #4CAF50;
+width: 110px;
+}
+#username{
+  width: 200px;
+  height:30px;
+}
+#room{
+  width: 200px;
+  height:30px;
+    margin:15px;
+}
+form h1{
+    font-size:40px;
+    color:whitesmoke;
+}
+form{
+  margin-top: -20px;
+  width:fit-content;
+  border:2px white solid;
+  border-radius:20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  margin:auto;
+}
+.title{
+  margin-bottom: 30px;
+}
+.holding_msgs{
+  height: 400px;
+  width: 50%;
+    margin:10px;
+  background-color: rgb(211, 211, 211);
+  border-radius: 5px;
+
+}
+#text{
+    height:50px;
+    width:500px;
+    border-radius:10px;
+    border-color:green;
+    font-size:20px;
+}
+#hold_chat{
+  background-color: rgb(215, 215, 215);
+  border-radius: 20px;
+  height:50vh;
+  width:500px;
+  margin-bottom:20px;
+  margin:5px;
+  padding:15px;
+  overflow: auto;
+  text-align:justify;
+  background-image: url('chat_bcgr.jpg');
+}
+div{
+    border-radius:10px;
+}
+#No_msg{
+    width:200px;
+    height:60px;
+    margin:auto;
+    text-align:center;
+    color:white;
+    font-size:26px;
+    background-color:red;
+}
+.header h1{
+  width: fit-content;
+}
+form .submit{
+  font-size:17px;
+}
+.chatwindow{
+  background-color: rgb(232,232,232);
+  border:3px solid rgb(10,10,10);
+  width: fit-content;
+  padding: 15px;
+}
+.newmsg{
+  width: 350px;
+  margin-top:10px;
+  word-wrap: break-word;
+  height:fit-content;
+  padding:10px;
+  margin: 10px;
+  background-color: green;
+  color: white;
+}
+.leftVerDiv{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background: rgb(51, 51, 51);
+  transition:width 0.5s; 
+  -webkit-transition:width 0.5s; 
+}
+.leftVerDiv:hover{
+  width: 250px;
+}
+.HorizDiv{
+  font: bold 12px Sans-Serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #369;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 0 10px 0;
+  line-height: 24px;
+  text-orientation: mixed;
+  writing-mode: vertical-rl; 
+  position: absolute;
+  top: 300px;
+  transition:width 0.5s; 
+  -webkit-transition:width 0.5s; 
+  transition:height 0.5s; 
+  -webkit-transition:height 0.5s; 
+}
+#fileBtn{
+  display:block;
+  width:120px;
+   height:30px;
+}
+/* Button effect*/
+  .buttons {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 300px;
+  margin-top: -20px;
+
+  }
+ .bton {
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size:17px;
+  position: relative;
+  margin: 32px;
+ }    
+ .btn-3{
+  overflow: hidden;
+  color:#fff;
+  border-radius: 30px;
+  box-shadow: 0 0 0 0 rgba(143,64,248,0.5), 0 0 0 0 rgba(39,200,255,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-3::after{
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(225deg,#27d86c 0%, #26caf8 50% , #c625d0 100%);
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+.btn-3:hover{
+ transform: translate(0,-6px);
+ text-decoration: none;
+ box-shadow: 10px -10px 25px 0 rgba(143,64,248,0.5), -10px 10px 25px 0 rgba(39,200,255,0.5);
+}
+.btn-3:hover::after{
+ transform: rotate(150deg);
+}
+.curr_photo,.JoinH2{
+ color: whitesmoke;
+}
+.Avatar{
+ vertical-align: middle;
+ opacity:0.7;
+ width: 100px;
+ height: 100px;
+   
+}
+.Avatar:hover{
+ opacity:1;
+ border: 2px solid rgb(2, 182, 2);
+ height:100px;
+ border-radius:50%;
+}
+.or_header{
+ color: whitesmoke;
+}
+.Ava_clickedWmn ,.Ava_clickedMn{
+  opacity: 1;
+  border: 4px solid rgb(2, 182, 2);
+  border-radius:50%;
+}
+/*input*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.div_room{
+  position: relative;
+  width: 20rem;
+  height: 3rem;
+  margin-bottom: 10px;
+}
+.div_username{
+  margin-bottom: 15px;
+  position: relative;
+  width: 20rem;
+  height: 3rem;
+}
+.form_input_usrnm{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #e1e5ee;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  outline: none;
+  padding: 1.25rem;
+  background: none;
+  /* Change border when input focus*/
+}
+.form_input_usrnm:hover {
+  border-color: #adffff;
+}
+.form_input_usrnm:focus {
+  border-color: #18ffff;
+}
+.form__label {
+  position: absolute;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  color: white;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #060b23;
+}
+.form_input_usrnm:focus ~ .form__label,
+.form_input_usrnm:not(:placeholder-shown).form_input_usrnm:not(:focus) ~ .form__label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
+#imageUpload{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: none;
+}
+#imageUpload:hover{
+  opacity:1;
+  border: 2px solid rgb(2, 182, 2);
+  height:100px;
+  border-radius:50%;
+ }
+ .ownImage{
+  opacity: 1;
+  border: 4px solid rgb(2, 182, 2);
+  border-radius:50%;
+ }
+#removephoto{
+  background-color: red;
+  width: 150px;
+  border-radius: 10px;
+  height: 30px;
+  color: white;
+  display: none;
+}
+nav{
+  font-size: 18px;
+}
+#ChatImage{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+#usernameLSide{
+  color: rgb(131, 255, 131);
+  font-weight: 900;
+}
+.notExist{
+  color: whitesmoke;
+  background-color: red;
+  padding: 7px;
+  border-radius:10px ;
+  width: fit-content;
+  margin-top: -10px;
+}
+#users{
+  margin-top: 170px;
+}
+#users div{
+  width: fit-content;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  margin: 0 auto;
+}
+#users img {
+  width: 50px;
+  border-radius: 50%;
+  display:block;
+    margin:auto;
+}
+.newuser{
+  width: 350px;
+  margin-top:10px;
+  height:fit-content;
+  padding:10px;
+  margin: 10px;
+}
+#users{
+  overflow: auto;
+}

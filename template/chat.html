@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ofek PYTHON chat</title>
+    <!--Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>           
+    <script type="text/javascript" src="{{ url_for('static', filename='Chat.js') }}"></script>
+</head>
+  <body class="text-center">
+    <center>
+    <div class="chatwindow">
+        <center>
+      <h2>Room : {{session['room']}}</h2><br>
+      <h3>Your username: {{session['username']}}</h3>
+      <br>
+      <h4>Limit : {{session['limit']}}</h4>
+      <div id="hold_chat">
+          <div id="No_msg" display="none">No message to display</div>
+          {% for a in all_messages %}
+          <div class="newmsg" id="newmsg">
+          {{a[4]}} : {{a[3]}}
+        </div>
+          <br>
+          {% endfor %}
+      </div>
+      <input type="text" id="text" size="60" placeholder="Enter your message here" /><br></br>
+      <button type="button" id="send" class="btn btn-success" >SEND</button><br /><br />
+      <button type="button" class="btn btn-danger" onclick=leave_room()>Leave this Chat</button></center>
+    </div>
+</center>
+<div id="leftVerDiv" class="leftVerDiv">
+    <div id="horizLeft"class="HorizDiv">
+        ALL USERS
+    </div>
+    <img id="ChatImage"src="{{session['image']}}">
+    <div id="usernameLSide" style="display: none;">{{session['username']}}</div>
+    <div id="users">
+    </div>
+</div>
+  </body>
+</html>

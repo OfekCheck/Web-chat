@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='NewRm.css') }}">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <title>New Room</title>
+</head>
+<body>
+    <div id="page-container">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="{{url_for('index')}}">THE CHAT</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="{{url_for('new_room')}}">Open new room</a></li>
+              <li>  <a href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li>  <a href="{{ url_for('about') }}">About me</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <center> <h2 class="curr_photo">Your current chat photo</h2>
+          <img id="AvatarMan" class="Avatar"alt="Avatar" onclick="lightCircleAvatarMn()"src="static/ManAvatar.jpg">
+          <img id="AvatarWomen" class="Avatar"alt="Avatar"  onclick="lightCircleAvatarWmn()" src="static/WomenAvatar.jpg">
+         <img id="imageUpload" onclick="ownImage()" src="#" alt="your image" /><br>
+            <button id="removephoto" onclick="removePhoto()">Remove photo</button>
+          <h3 class="or_header">OR</h3>
+           <div id="buttons"class="buttons">
+              <a onclick="document.getElementById('getFile').click()" class="bton btn-3">Upload your best photo</a>
+            </div>
+            {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}</p>
+          {% endif %}
+        </center>
+        <div class="centerDiv">
+            <h1>Create room</h1>
+            <form method="post" action="{{ url_for('create_room') }}" enctype="multipart/form-data" >
+              <div class="ddd">
+                    <input type="text" id="UserName" name="username"maxlength="5"class="form__input" autocomplete="off" placeholder=" " required>
+                    <label for="UserName" class="form__label">UserName</label>
+                  </div>
+                  <br>
+                  <div class="ddd">
+                    <input type="text" id="RoomName" name="room"maxlength="5"class="form__input" autocomplete="off" placeholder=" " required>
+                    <label for="RoomName" class="form__label">Room name</label>
+                  </div>
+                  <br>
+                  <div class="ddd">
+                    <input type="text" name="limit"id="limit" maxlength="4"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form__input" autocomplete="off" placeholder="No limit">
+                    <label for="limit" class="form__label">Users limit</label>
+                  </div>
+                  <input type="file" id="getFile" name="getFile" style="visibility: hidden;display: none;" >
+                  <input id="Choose_Avatar" name="Choose_Avatar" style="visibility: hidden;display: none;"/>
+                  <button class="Submit" type="submit">Submit</button>
+                </form>
+        </div>
+    </div>
+</body>
+</html>

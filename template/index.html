@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Ofek Python chat</title>
+  <!--Link to CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+<body class="text-center">
+  <div id="page-container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href=".">THE CHAT</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href=".">Home</a></li>
+        <li>  <a href="{{ url_for('new_room') }}">Open new room</a>
+        </li>
+        <li>  <a href="{{ url_for('about') }}">About me</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <center> <h2 class="JoinH2">Join existing room.</h2><h2 class="curr_photo">Your current chat photo</h2>
+  <img id="AvatarMan" class="Avatar"alt="Avatar" onclick="lightCircleAvatarMn()"src="static/ManAvatar.jpg">
+  <img id="AvatarWomen" class="Avatar"alt="Avatar"  onclick="lightCircleAvatarWmn()" src="static/WomenAvatar.jpg">
+ <img id="imageUpload" onclick="ownImage()" src="#" alt="your image" /><br>
+    <button id="removephoto" onclick="removePhoto()">Remove photo</button>
+  <h3 class="or_header">OR</h3>
+   <div id="buttons"class="buttons">
+      <a onclick="document.getElementById('getFile').click()" class="bton btn-3">Upload your best photo</a>
+    </div>
+    {% if not_exist %}
+    <p class="notExist"><strong>{{ not_exist }}</strong> </p>
+  {% endif %}
+ <form class="form-signin" action="{{ url_for('join_chat') }}" method="POST" enctype="multipart/form-data">    
+   <h1 class="title">Py chat</h1>
+   <div class="div_username">
+    <input type="text" id="username" name="username" maxlength="5"class="form_input_usrnm" autocomplete="off" placeholder=" " required>
+    <label for="username" class="form__label">Username</label>
+  </div>
+  <div class="div_room">
+    <input type="text" name="room"id="username" maxlength="5" class="form_input_usrnm" autocomplete="off" placeholder=" " required>
+    <label for="username" class="form__label">Room</label>
+  </div>
+  <input type="file" id="getFile" name="getFile" style="visibility:hidden;" >
+    <button class="btn submit" value="submit">Start Chat</button>
+    <input id="Choose_Avatar" name="Choose_Avatar" style="visibility: hidden;display: none;"/>
+  </form>
+  </center>
+</div>
+</body>
+</html>
